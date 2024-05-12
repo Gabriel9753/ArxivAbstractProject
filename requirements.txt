@@ -1,16 +1,14 @@
 tqdm
 python-dotenv
 
-
-
-# pandas
-# pyarrow
-# fastparquet
-# numpy
-# matplotlib
-# scikit-learn
-# jupyter
-# seaborn
+pandas
+pyarrow
+fastparquet
+numpy
+matplotlib
+scikit-learn
+jupyter
+seaborn
 # polars
 # pendulum
 
@@ -21,6 +19,9 @@ bandit
 mypy
 pylint
 loguru
-icecream
 
 ### add specific project dependencies here:
+torch
+transformers
+datasets
+bokeh
