@@ -24,4 +24,5 @@ loguru
 torch
 transformers
 datasets
+sentence-transformers
 bokeh
