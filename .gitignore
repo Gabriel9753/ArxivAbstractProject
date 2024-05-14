@@ -1,6 +1,8 @@
 # project specific
 cache/
 data/
+.venv311
+chroma_data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

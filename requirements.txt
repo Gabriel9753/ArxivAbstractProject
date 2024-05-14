@@ -26,3 +26,5 @@ transformers
 datasets
 sentence-transformers
 bokeh
+chromadb
+renumics-spotlight
