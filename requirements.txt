@@ -11,6 +11,7 @@ jupyter
 seaborn
 # polars
 # pendulum
+toml
 
 ### development
 black
