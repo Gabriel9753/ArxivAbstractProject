@@ -11,7 +11,6 @@ jupyter
 seaborn
 # polars
 # pendulum
-toml
 
 ### development
 black
@@ -27,6 +26,3 @@ transformers
 datasets
 sentence-transformers
 bokeh
-chromadb
-renumics-spotlight
-streamlit
