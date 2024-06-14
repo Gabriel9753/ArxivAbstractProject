@@ -11,18 +11,16 @@ jupyter
 seaborn
 # polars
 # pendulum
+toml
 
 ### development
 black
-isort
-bandit
-mypy
-pylint
-loguru
-
-### add specific project dependencies here:
-torch
+# torch
 transformers
 datasets
 sentence-transformers
+bokeh
+chromadb
+renumics-spotlight
+streamlit
 bokeh

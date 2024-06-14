@@ -4,6 +4,7 @@ data/
 *.npy
 *.pt
 *.pth
+chroma_data/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -128,6 +129,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv311
 env/
 venv/
 ENV/

@@ -1,0 +1,15 @@
+[paths]
+json_path = "../data/arxiv-metadata-oai-snapshot.json"
+parquet_path = "../data/arxiv_metadata.parquet.gzip"
+sample_parquet_path = "../data/arxiv_metadata_sample.parquet.gzip"
+category_map_path = "../data/category_map.json"
+
+[settings]
+load_existing = true
+# chunksize = 100000
+chunksize = 100000
+title_word_quantiles = [0.1, 0.8]
+abstract_word_quantiles = [0.2, 0.8]
+lb_papers = 10_000
+n_samples = 100_000
+categories_of_interest = []
