@@ -5,14 +5,27 @@ import time
 import chromadb
 import numpy as np
 from chromadb.utils import embedding_functions
-
+from openai import OpenAI
 import streamlit as st
 
-CHROMA_DATA_PATH = "src/chroma_data"
-EMBED_MODEL = "all-MiniLM-L6-v2"
+from chromadb import Documents, EmbeddingFunction, Embeddings
+
+
+CHROMA_DATA_PATH = r"C:\Users\ihett\OneDrive\Gabrilyi\arxiv_project\chroma_data"
+EMBED_MODEL = "all-mpnet-base-v2"
+# EMBED_MODEL = "all-MiniLM-L6-v2"
+# EMBED_MODEL = "bge-base-en"
 COLLECTION_NAME = "arxiv_papers"
 
 CHROMA_DATA_PATH = os.path.join(CHROMA_DATA_PATH, EMBED_MODEL)
+class Embedder(EmbeddingFunction):
+    def __init__(self):
+        self.client = OpenAI(base_url="http://localhost:5000/v1", api_key="lm-studio")
+        self.model = "CompendiumLabs/bge-base-en-v1.5-gguf"
+
+    def __call__(self, input:Documents) -> Embeddings:
+        return [d.embedding for d in self.client.embeddings.create(input = input, model=self.model).data]
+
 
 # Initialize ChromaDB client
 client = chromadb.PersistentClient(path=CHROMA_DATA_PATH)
@@ -80,7 +93,7 @@ def st_color_same_words(text, words):
     return text
 
 
-collection = create_collection(client, COLLECTION_NAME, embedding_func)
+collection = create_collection(client, COLLECTION_NAME, embedding_func) # Embedder()
 
 if st.button("Get Recommendations"):
     if input_text:
@@ -96,7 +109,7 @@ if st.button("Get Recommendations"):
             # doc is built like: "Title: ... - Abstract: ..."
             doc_title = re.search("Title: (.*?) - Abstract:", _doc).group(1)
             doc_abstract = re.search("- Abstract: (.*?)$", _doc).group(1)
-            doc_category = _meta["category_0"]
+            doc_category = _meta["super_category"]
             doc_date = _meta["update_date"]
 
             st.subheader(f"ID: {_id}")

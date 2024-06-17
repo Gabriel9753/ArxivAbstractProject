@@ -23,4 +23,3 @@ bokeh
 chromadb
 renumics-spotlight
 streamlit
-bokeh
