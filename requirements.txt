@@ -15,7 +15,9 @@ toml
 plotly
 ### development
 black
-# torch
+
+--find-links https://download.pytorch.org/whl/cu121
+torch
 transformers
 datasets
 sentence-transformers
