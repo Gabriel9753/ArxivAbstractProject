@@ -1,6 +1,6 @@
 tqdm
 python-dotenv
-
+openai
 pandas
 pyarrow
 fastparquet
@@ -12,7 +12,7 @@ seaborn
 # polars
 # pendulum
 toml
-
+plotly
 ### development
 black
 # torch
