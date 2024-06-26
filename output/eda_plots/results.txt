@@ -1,0 +1,35 @@
+Max number of words in title: 61
+Max number of words in abstract: 925
+--------------------------------------------------
+Min number of words in title: 1
+Min number of words in abstract: 1
+--------------------------------------------------
+Mean number of words in title: 9.74962921370619
+Mean number of words in abstract: 140.5764978409117
+--------------------------------------------------
+Median number of words in title: 9.0
+Median number of words in abstract: 135.0
+
+--------------------------------------------------
+
+print(f'Max number of words in title: {data_df["title_words"].max()}')
+print(f'Max number of words in abstract: {data_df["abstract_words"].max()}')
+print("-" * 50)
+print(f'Min number of words in title: {data_df["title_words"].min()}')
+print(f'Min number of words in abstract: {data_df["abstract_words"].min()}')
+print("-" * 50)
+print(f'Mean number of words in title: {data_df["title_words"].mean()}')
+print(f'Mean number of words in abstract: {data_df["abstract_words"].mean()}')
+print("-" * 50)
+print(f'Median number of words in title: {data_df["title_words"].median()}')
+print(f'Median number of words in abstract: {data_df["abstract_words"].median()}')
+--------------------------------------------------
+Min words in title: 1
+Min words in abstract: 1
+Max words in title: 61
+Max words in abstract: 925
+
+Title quantiles: (5.0, 15.0)
+Abstract quantiles: (24.0, 233.0)
+Papers before cleaning: 2455161
+Papers after cleaning: 1952500
