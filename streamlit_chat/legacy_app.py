@@ -14,7 +14,7 @@ from chromadb.utils import embedding_functions
 from openai import OpenAI
 
 # Constants
-DF_PATH = "data/arxiv_metadata_sample.parquet.gzip"
+DF_PATH = "data/arxiv_metadata_app_data.parquet.gzip"
 CHROMA_DATA_PATH = "src/chroma_data"
 EMBED_MODEL = "all-MiniLM-L12-v2"
 COLLECTION_NAME = "arxiv_papers"
