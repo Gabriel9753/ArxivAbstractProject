@@ -11,7 +11,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 from chromadb import PersistentClient
 from chromadb.utils import embedding_functions
-from fpdf import FPDF
 from openai import OpenAI
 
 # Constants
@@ -36,7 +35,24 @@ system_prompt = """
 You are a knowledgeable assistant specialized in summarizing arXiv papers. Your task is to provide a clear and concise summary of the paper based on its title and abstract.
 Please ensure the summary is friendly, informative, and easy to understand. Highlight the main contributions, methods, and findings of the paper.
 You can include additional useful information if it helps to understand the paper better.
-Do not mention that you are a chatbot or that this text is AI-generated. Present the information naturally and professionally as if you were a human expert.
+Do not mention that you are a chatbot or that this text is AI-generated. Do also not mention that this is a summary. Only output the final summary.
+Print with bullet points the top 3 key contributions or findings of the paper.
+Present the information naturally and professionally as if you were a human expert.
+
+Example:
+Summary:
+[Summary of the paper...]
+
+Key Contributions:
+- [Contribution 1]\n
+- [Contribution 2]\n
+- [Contribution 3]\n
+
+Additional Information:
+[Additional information...]
+
+Related to the user's interest:
+[Additional information related to the user's interest...]
 """
 user_prompt = """
 A user is interested in the following topic: {}
