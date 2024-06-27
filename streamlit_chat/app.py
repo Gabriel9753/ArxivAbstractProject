@@ -1,18 +1,14 @@
 import os
 import re
-from io import BytesIO
 
 import matplotlib.pyplot as plt
-import networkx as nx
 import numpy as np
 import pandas as pd
-import plotly.graph_objs as go
 import requests
 import streamlit as st
 import streamlit.components.v1 as components
 from chromadb import PersistentClient
 from chromadb.utils import embedding_functions
-from fpdf import FPDF
 from openai import OpenAI
 
 # Constants
